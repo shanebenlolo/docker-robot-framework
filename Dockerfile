@@ -89,7 +89,7 @@ RUN apk update \
   && ln -sfv /opt/robotframework/bin/chromium-browser /usr/lib/chromium/chrome \
 # FIXME: above is a workaround, as the path is ignored
 
-# Install Robot Framework and Selenium Library
+# Install Robot Framework, Selenium Library, FPDF
   && pip3 install \
     --no-cache-dir \
     robotframework==$ROBOT_FRAMEWORK_VERSION \
@@ -107,6 +107,7 @@ RUN apk update \
     robotframework-sshlibrary==$SSH_LIBRARY_VERSION \
     axe-selenium-python==$AXE_SELENIUM_LIBRARY_VERSION \
     PyYAML \
+    fpdf \
 
 # Install awscli to be able to upload test reports to AWS S3
     awscli==$AWS_CLI_VERSION \
